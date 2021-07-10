@@ -9,6 +9,7 @@ var backgroundImg;
 var bg ;
 
 function preload() {
+    // create getBackgroundImg( ) here
     getBackgroundImg();
 }
 
@@ -20,45 +21,41 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
-    background(backgroundImg);
-    
+
+    // add condition to check if any background image is there to add
+    if(backgroundImg){
+        background(backgroundImg);
+    }
 
 
     Engine.update(engine);
-    
+
+    // write code to display time in correct format here
+
 
 }
-
 async function getBackgroundImg(){
+    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
+    var responseJSON = await response.json();
 
+    console.log(responseJSON);
 
-  var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-  var responseJSON = await response.json();
-  var datetime= responseJSON.datetime;
-  var hour= datetime.slice(11,13);
-   
-    if (hour>= 04 && hour<= 06){
+    var datetime = responseJSON.datetime;
+    var hour = datetime.slice(11,13);
 
-    Bg= "sunrise1.png";
+    console.log(datetime+"  " +hour);
 
-    } else if(hour>= 06 && hour<= 08){
-    bg= "sunrise2.png";
-    
-    }else if (hour>= 23 && hour<= 0){
-    bg= "sunset10.png";
-    
-    } else if (hour>= 0 && hour<= 03){
-    bg= "sunset11.png";
-
+    if(hour>=04 && hour<=06){
+        bg = "sunrise1.png";
+    }else if(hour>=06 && hour<=08){
+        bg = "sunrise2.png";
+    }else if(hour>=23 && hour==0){
+        bg = "sunset10.png";
+    }else if(hour>=0 && hour==03){
+        bg = "sunset11.png";
     }else{
-    bg= "sunset12.png";
+        bg = "sunset12.png";
     }
+backgroundImg = loadImage(bg);
 
-    
-    backgroundImg= loadImage(bg);
-   
-   console.log(backgroundImg);
-    
-  
-}
+} 
