@@ -7,7 +7,7 @@ var engine, world;
 var backgroundImg;
 var hour;
 
-var bg = "images/sunrise1.png";
+var bg = "sunrise1.png";
 
 function preload() {
     // create getBackgroundImg( ) here
@@ -56,40 +56,40 @@ async function getBackgroundImg(){
     // add conditions to change the background images from sunrise to sunset
     if(hour>=04 && hour<=06 ){
         debugger;
-        bg = "images/sunrise1.png";
+        bg = "sunrise1.png";
     }else if(hour>=06 && hour<=08 ){
         debugger;
-        bg = "images/sunrise2.png";
+        bg = "sunrise2.png";
     }else if(hour>=08 && hour<=11 ){
         debugger;
-        bg = "images/sunrise3.png";
+        bg = "sunrise3.png";
     }else if(hour>=11 && hour<=13){
         debugger;
-        bg = "images/sunrise4.png";
+        bg = "sunrise4.png";
     }else if(hour>=13 && hour<=15){
         debugger;
-        bg = "images/sunrise5.png";
+        bg = "sunrise5.png";
     }else if(hour>=15 && hour<=17 ){
         debugger;
-        bg = "images/sunrise6.png";
+        bg = "sunrise6.png";
     }else if(hour>=17 && hour<=18 ){
         debugger;
-        bg = "images/sunset7.png";
+        bg = "sunset7.png";
     }else if(hour>=18 && hour<=20 ){
         debugger;
-        bg = "images/sunset8.png";
+        bg = "sunset8.png";
     }else if(hour>=20 && hour<=23 ){
         debugger;
-        bg = "images/sunset9.png";
+        bg = "sunset9.png";
     }else if(hour>=23 && hour==0){
         debugger;
-        bg = "images/sunset10.png";
+        bg = "sunset10.png";
     }else if(hour==0 && hour<=03){
         debugger;
-        bg = "images/sunset11.png";
+        bg = "sunset11.png";
     }else{
         debugger;
-        bg = "images/sunset12.png";
+        bg = "sunset12.png";
     }
 
     //load the image in backgroundImg variable here
